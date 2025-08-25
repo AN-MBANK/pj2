@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "_LayoutCustomer";
+}
+
+<!-- Single Page Header -->
+@RenderSection("BreadCum", required: false)
+
+<!-- Shop Section Start -->
+<div class="container-fluid fruite py-5">
+    <div class="container py-5">
+        <h1 class="mb-4">LTMSvE Shop</h1>
+        <div class="row g-4">
+            <div class="col-lg-12">
+                <div class="row g-4">
+                    <!-- Search Panel -->
+                    <div class="col-xl-3">
+                        @await Html.PartialAsync("_TimKiemPanel")
+                    </div>
+
+                    <div class="col-6"></div>
+
+                    <!-- Sorting -->
+                    <div class="col-xl-3">
+                        <div class="bg-light ps-3 py-3 rounded d-flex justify-content-between mb-4">
+                            <label for="sort">Sắp xếp:</label>
+                            <select id="sort" class="border-0 form-select-sm bg-light me-3">
+                                <option value="default">Mặc định</option>
+                                <option value="popular">Phổ biến</option>
+                                <option value="new">Mới nhất</option>
+                                <option value="price">Giá</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Sidebar -->
+                    <div class="col-lg-3">
+                        <div class="row g-4">
+                            <!-- Menu loại -->
+@await Component.InvokeAsync("MenuLoai")
+
+                            <!-- Price filter -->
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <h4 class="mb-2">Khoảng giá</h4>
+                                    <input type="range" class="form-range w-100" id="rangeInput" min="0" max="500" value="0"
+                                           oninput="amount.value=rangeInput.value">
+                                    <output id="amount">0</output>
+                                </div>
+                            </div>
+
+                            <!-- Extra filter -->
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <h4>Khác</h4>
+                                    <div class="mb-2"><input type="radio" class="me-2" name="extra" id="organic"><label for="organic"> Organic</label></div>
+                                    <div class="mb-2"><input type="radio" class="me-2" name="extra" id="fresh"><label for="fresh"> Fresh</label></div>
+                                    <div class="mb-2"><input type="radio" class="me-2" name="extra" id="sale"><label for="sale"> Sale</label></div>
+                                    <div class="mb-2"><input type="radio" class="me-2" name="extra" id="discount"><label for="discount"> Discount</label></div>
+                                    <div class="mb-2"><input type="radio" class="me-2" name="extra" id="expired"><label for="expired"> Expired</label></div>
+                                </div>
+                            </div>
+
+                            <!-- Featured products -->
+                            <div class="col-lg-12">
+                                <h4 class="mb-3">Sản phẩm nổi bật</h4>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded me-3" style="width: 80px; height: 80px;">
+                                        <img src="~/img/featur-1.jpg" class="img-fluid rounded" alt="">
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Big Banana</h6>
+                                        <div class="text-warning small">★★★★☆</div>
+                                        <div><span class="fw-bold">2.99 $</span> <span class="text-danger text-decoration-line-through">4.11 $</span></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="rounded me-3" style="width: 80px; height: 80px;">
+                                        <im

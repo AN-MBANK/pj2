@@ -1,0 +1,58 @@
+﻿@model IEnumerable<A_Ecommerce.ViewModels.HangHoaVM>
+
+@{
+    ViewData["Title"] = "Shop";
+    Layout = "_DanhSachHangHoa"; // Layout chuẩn
+}
+
+<!-- Single Page Header -->
+@section BreadCum {
+    <div class="container-fluid page-header py-5">
+        <h1 class="text-center text-white display-6">Shop</h1>
+        <ol class="breadcrumb justify-content-center mb-0">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Pages</a></li>
+            <li class="breadcrumb-item active text-white">Shop</li>
+        </ol>
+    </div>
+}
+
+<!-- Products List -->
+<div class="container py-5">
+    <div class="row g-4">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="card h-100 border-0 shadow-sm">
+                    <a asp-controller="HangHoa" asp-action="Detail" asp-route-id="@item.MaHh">
+                        <img src="~/Hinh/HangHoa/@item.Hinh" class="card-img-top" alt="@item.TenHH" style="height:200px; object-fit:cover;">
+                    </a>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">
+                            <a asp-controller="HangHoa" asp-action="Detail" asp-route-id="@item.MaHh" class="text-dark text-decoration-none">
+                                @item.TenHH
+                            </a>
+                        </h5>
+                        <p class="text-primary fw-bold mb-2">$@item.DonGia</p>
+                        <p class="text-muted">@item.MoTaNgan</p>
+                        <a asp-controller="Cart" asp-action="AddToCart" asp-route-id="@item.MaHh" class="btn btn-outline-primary btn-sm">
+                            <i class="fa fa-shopping-bag me-1"></i> Add to Cart
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    <div class="row mt-5">
+        <div class="col-12 d-flex justify-content-center">
+            <nav>
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>

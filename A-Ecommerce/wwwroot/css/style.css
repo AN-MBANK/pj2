@@ -1,0 +1,228 @@
+﻿/* ==============================
+   SUPER FINAL CSS
+   Phiên bản tối ưu - Full Responsive
+   ============================== */
+
+/* ==== Biến màu chung ==== */
+:root {
+    --primary: #258cfb;
+    --secondary: #f97316;
+    --success: #22c55e;
+    --danger: #ef4444;
+    --warning: #eab308;
+    --info: #06b6d4;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --white: #ffffff;
+    --gray: #6b7280;
+    --radius: 12px;
+    --transition: all 0.3s ease-in-out;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ==== Reset & Base ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.6;
+    background: var(--light);
+    color: var(--dark);
+    margin-bottom: 60px;
+}
+
+/* ==== Typography ==== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: .5em;
+}
+
+p {
+    margin-bottom: 1em;
+    color: var(--gray);
+}
+
+/* ==== Buttons ==== */
+.btn {
+    display: inline-block;
+    padding: .5rem 1rem;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+    .btn-primary:hover {
+        background: #1e70d4;
+    }
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+    .btn-secondary:hover {
+        background: #d65d0c;
+    }
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+}
+
+    .btn-outline:hover {
+        background: var(--primary);
+        color: var(--white);
+    }
+
+/* Focus ring */
+.btn:focus, .form-control:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.15rem white, 0 0 0 0.25rem var(--primary);
+}
+
+/* ==== Forms ==== */
+.form-control {
+    width: 100%;
+    padding: .5rem .75rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+    .form-control:focus {
+        border-color: var(--primary);
+    }
+
+/* ==== Navbar ==== */
+.navbar {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    padding: .75rem 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+    .navbar a {
+        color: var(--dark);
+        font-weight: 500;
+        margin: 0 .5rem;
+        transition: var(--transition);
+    }
+
+        .navbar a:hover {
+            color: var(--primary);
+        }
+
+/* ==== Hero Section ==== */
+.hero {
+    padding: 4rem 1rem;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--white);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+/* ==== Cards ==== */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+/* ==== Product grid ==== */
+.products {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.product-item img {
+    width: 100%;
+    border-radius: var(--radius);
+    margin-bottom: .5rem;
+}
+
+/* ==== Testimonials ==== */
+.testimonial {
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* ==== Footer ==== */
+.footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* ==== Utilities ==== */
+.text-center {
+    text-align: center;
+}
+
+.mt-2 {
+    margin-top: .5rem;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: .5rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.p-2 {
+    padding: .5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}

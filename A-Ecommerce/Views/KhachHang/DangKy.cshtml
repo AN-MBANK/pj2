@@ -1,0 +1,64 @@
+﻿@model A_Ecommerce.ViewModels.RegisterVM
+@{
+    ViewData["Title"] = "Đăng ký";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <h1 class="mb-4 text-center">Đăng ký Thành viên</h1>
+            <form asp-action="DangKy" enctype="multipart/form-data" novalidate>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="MaKh" class="form-label"></label>
+                        <input asp-for="MaKh" class="form-control" />
+                        <span asp-validation-for="MaKh" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="MatKhau" class="form-label"></label>
+                        <input asp-for="MatKhau" class="form-control" type="password" />
+                        <span asp-validation-for="MatKhau" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="HoTen" class="form-label"></label>
+                        <input asp-for="HoTen" class="form-control" />
+                        <span asp-validation-for="HoTen" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center">
+                        <div class="form-check mt-2">
+                            <input asp-for="GioiTinh" class="form-check-input" />
+                            <label class="form-check-label" for="GioiTinh">Nam</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="NgaySinh" class="form-label"></label>
+                        <input asp-for="NgaySinh" class="form-control" type="date" />
+                        <span asp-validation-for="NgaySinh" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="DiaChi" class="form-label"></label>
+                        <input asp-for="DiaChi" class="form-control" />
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="DienThoai" class="form-label"></label>
+                        <input asp-for="DienThoai" class="form-control" />
+                        <span asp-validation-for="DienThoai" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Email" class="form-label"></label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label" for="Hinh">Hình</label>
+                        <input type="file" name="Hinh" class="form-control" />
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button type="submit" class="btn btn-primary w-50 text-uppercase py-2">Đăng ký</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
